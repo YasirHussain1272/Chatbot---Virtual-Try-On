@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Try-On</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Virtual Dress Try-On</h1>
+        <form id="tryonForm" enctype="multipart/form-data">
+            <div class="input-field">
+                <label for="person_image">Upload Your Image:</label>
+                <input type="file" id="person_image" name="person_image" accept="image/*" required>
+            </div>
+            <div class="input-field">
+                <label for="dress_image">Upload Dress Image:</label>
+                <input type="file" id="dress_image" name="dress_image" accept="image/*" required>
+            </div>
+            <button type="submit">Try On</button>
+        </form>
+        <div id="result-container">
+            <h2>Try-On Result:</h2>
+            <img id="result-image" src="" alt="Result will appear here" />
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/app.js') }}"></script>
+</body>
+</html>
